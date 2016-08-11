@@ -4,11 +4,12 @@ category: info
 tags: build
 layout: default
 project: Cleaver2
+supportEmail: cleaver@sci.utah.edu
 ---
 
 ## Table of Contents
 
-* [Installing {{ page.project }} from source](#installing-{{ page.project }}-from-source)
+* [Installing {{ page.project }} from source](#installing-cleaver2-from-source)
     * [Dependencies](#dependencies)
         * [Qt](#qt)
         * [CMake](#cmake)
@@ -19,7 +20,7 @@ project: Cleaver2
             * [Unix and OSX](#unix-and-osx)
             * [Windows](#windows)
             * [All Platforms](#all-platforms)
-* [{{ page.project }} Support](#{{ page.project }}-support)
+* [{{ page.project }} Support](#cleaver2-support)
 
 # Installing {{ page.project }} from source
 
@@ -98,7 +99,7 @@ Follow these commands:
 ``` C:\Qt5_DIR\msvc2015\5.6\bin\Qt5Gui.dll ``` <br/>
 
 #### All Platforms
-Your paths may differ slightly based on your Qt5, and ITK versions and where they are installed/built.
+Your paths may differ slightly based on your Qt5 and ITK versions and where they are installed/built.
 
 The console version ``ccmake``, or GUI version can also be used.
 You may be prompted to specify your location of the Qt installation.
