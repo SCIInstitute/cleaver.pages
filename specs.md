@@ -3,7 +3,7 @@ layout: default
 title: Platform Specifications
 category: info
 tags: build
-project: Shapeworks Studio
+project: Cleaver2
 ---
 
 ## Specifications
@@ -13,6 +13,7 @@ project: Shapeworks Studio
 + Windows 7+, OSX 10.9+, and OpenSuse 13.1+ Recommended. Other platforms may work, but are not officially supported.
 + CPU: Core Duo or higher, recommended i5 or i7
 + Memory: 4Gb, recommended 8Gb or more
++ Dedicated Graphics Card (OpenGL 4.1+, Dedicated Shared Memory, no integrated graphics cards)
 + Graphics Memory: minimum 128MB, recommended 256MB or more
 
 ## Windows
@@ -34,7 +35,6 @@ The code base has been tested for use with GCC, and this is the recommended comp
 + C++11 64-bit compatible compiler
 + Git 1.8 or higher (https://git-scm.com/)
 + CMake 2.8+ (http://www.cmake.org/)
-+ Visualization ToolKit (VTK 7.* recommended) (http://www.vtk.org/)
 + Insight Toolkit (ITK 4.7+ recommended) (http://www.itk.org/)
 + Qt 5.* (http://www.qt.io/developers/)
 + NVIDIA card and drivers for Linux
