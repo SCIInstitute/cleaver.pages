@@ -10,16 +10,18 @@ supportEmail: cleaver@sci.utah.edu
 ## Table of Contents
 
 * [Installing {{ page.project }} from source](#installing-cleaver2-from-source)
-    * [Dependencies](#dependencies)
-        * [Qt](#qt)
-        * [CMake](#cmake)
-        * [ITK](#itk)
-    * [Compiling From Source](#compiling-from-source)
-        * [Compiling ITK](#compiling-itk)
-        * [Compiling {{ page.project }}](#compiling-{{ page.project }})
-            * [Unix and OSX](#unix-and-osx)
-            * [Windows](#windows)
-            * [All Platforms](#all-platforms)
+  * [Dependencies](#dependencies)
+    * [Qt](#qt)
+    * [CMake](#cmake)
+    * [ITK](#itk)
+  * [Compiling From Source](#compiling-from-source)
+    * [Compiling ITK](#compiling-itk)
+    * [Compiling {{ page.project }}](#compiling-{{ page.project }})
+      * [Unix and OSX](#unix-and-osx)
+      * [Windows](#windows)
+  * [All Platforms](#all-platforms)
+* [Testing](#testing)<br/>
+  * [Windows](#windows)<br/>
 * [{{ page.project }} Support](#cleaver2-support)
 
 # Installing {{ page.project }} from source
@@ -108,6 +110,27 @@ After configuration is done, generate the make files or project files for your f
 development environment and build.
 
 The {{ page.project }} application will be built in build/bin.
+
+# Testing
+
+The repo comes with a set of regression tests to see if recent
+changes break expected results. To build the tests, you will
+need to set <code>BUILD_TESTING</code> to "ON" in either
+<code>ccmake</code> or when calling CMake:
+
+```c++
+cmake -DBUILD_TESTING=ON ../src
+```
+
+## Windows
+The gtest library included in the repo needs to be
+built with forced shared libraries on Windows, so use the following:
+
+```c++
+cmake -DBUILD_TESTING=ON -Dgtest_forced_shared_crt=ON ../src
+```<br/>
+
+Be sure to include all other necessary CMake definitions as annotated above.
 
 # {{ page.project }} Support
 

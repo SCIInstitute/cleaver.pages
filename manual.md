@@ -13,8 +13,6 @@ supportEmail: cleaver@sci.utah.edu
   - [Command line Tool](#command-line-tool)
   - [Graphical Interface](#graphical-interface)
   - [Cleaver Library](#cleaver-library)
-- [Testing](#testing)<br/>
-  - [Windows](#windows)<br/>
 - [Known Issues](#known-issues)<br/>
 
 # Using {{ page.project }}
@@ -142,10 +140,11 @@ There are other headers for different options,
 such as converting NRRD files to cleaver indicator functions.
 You may wish to write your own indicator function creation methods.
 The basic set of calls are the following:
+
 ```c++
 #include <Cleaver/Cleaver.h>
 #include <Cleaver/CleaverMesher.h>
-...
+//...
 //obtain your image fields before this line
 cleaver::Volume *volume = new cleaver::Volume(fields);
 cleaver::CleaverMesher mesher(volume);
@@ -169,30 +168,12 @@ mesher.snapsAndWarp(verbose);
 mesher.stencilTets(verbose);
 cleaver::TetMesh *mesh = mesher.getTetMesh();
 mesh->writeMesh(output_path + output_name, output_format, verbose);
-...
-```
+//...
+```<br/>
+
 Look at the <code>Cleaver2/src/cli/mesher/main.cpp</code> file
 for more details on how to apply
 and use the different options of the cleaver library.<br/>
-
-# Testing
-
-The repo comes with a set of regression tests to see if recent
-changes break expected results. To build the tests, you will
-need to set <code>BUILD_TESTING</code> to "ON" in either
-<code>ccmake</code> or when calling CMake:
-
-```c++
-cmake -DBUILD_TESTING=ON ../src
-```
-## Windows
-The gtest library included in the repo needs to be
-built with forced shared libraries on Windows, so use the following:
-
-```c++
-cmake -DBUILD_TESTING=ON -Dgtest_forced_shared_crt=ON ../src
-```
-       Be sure to include all other necessary CMake definitions as annotated above.
 
 # Known Issues
 
