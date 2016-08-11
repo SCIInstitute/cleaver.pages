@@ -20,8 +20,8 @@ supportEmail: cleaver@sci.utah.edu
       * [Unix and OSX](#unix-and-osx)
       * [Windows](#windows)
   * [All Platforms](#all-platforms)
-* [Testing](#testing)<br/>
-  * [Windows](#windows)<br/>
+* [Testing](#testing)
+  * [Windows](#windows)
 * [{{ page.project }} Support](#cleaver2-support)
 
 # Installing {{ page.project }} from source

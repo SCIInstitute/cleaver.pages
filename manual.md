@@ -140,11 +140,11 @@ There are other headers for different options,
 such as converting NRRD files to cleaver indicator functions.
 You may wish to write your own indicator function creation methods.
 The basic set of calls are the following:
-
-```c++
+<br/>
+```bash
 #include <Cleaver/Cleaver.h>
 #include <Cleaver/CleaverMesher.h>
-//...
+...
 //obtain your image fields before this line
 cleaver::Volume *volume = new cleaver::Volume(fields);
 cleaver::CleaverMesher mesher(volume);
@@ -168,8 +168,10 @@ mesher.snapsAndWarp(verbose);
 mesher.stencilTets(verbose);
 cleaver::TetMesh *mesh = mesher.getTetMesh();
 mesh->writeMesh(output_path + output_name, output_format, verbose);
-//...
-```<br/>
+...
+
+```
+<br/>
 
 Look at the <code>Cleaver2/src/cli/mesher/main.cpp</code> file
 for more details on how to apply
