@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['viewer',['Viewer',['../class_viewer.html',1,'']]],
-  ['visualizer',['Visualizer',['../class_visualizer.html',1,'']]]
+  ['nrrdtools',['NRRDTools',['../class_n_r_r_d_tools.html',1,'']]]
 ];

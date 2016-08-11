@@ -16,7 +16,7 @@ supportEmail: cleaver@sci.utah.edu
     * [ITK](#itk)
   * [Compiling From Source](#compiling-from-source)
     * [Compiling ITK](#compiling-itk)
-    * [Compiling {{ page.project }}](#compiling-{{ page.project }})
+    * [Compiling {{ page.project }}](#compiling-cleaver2)
       * [Unix and OSX](#unix-and-osx)
       * [Windows](#windows)
   * [All Platforms](#all-platforms)

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['customsurfacereconstructionfilter',['CustomSurfaceReconstructionFilter',['../class_custom_surface_reconstruction_filter.html',1,'']]]
+  ['boundingbox',['BoundingBox',['../classcleaver_1_1_bounding_box.html',1,'cleaver']]]
 ];
