@@ -7,14 +7,14 @@ project: Cleaver2
 supportEmail: cleaver@sci.utah.edu
 ---
 
-##Table of Contents
+## Table of Contents
 
 - [Using {{ page.project }}](#using-cleaver2)
-- [Command line Tool](#command-line-tool)
-- [Graphical Interface](#graphical-interface)
-- [Cleaver Library](#cleaver-library)
+  - [Command line Tool](#command-line-tool)
+  - [Graphical Interface](#graphical-interface)
+  - [Cleaver Library](#cleaver-library)
 - [Testing](#testing)<br/>
-- [Windows](#windows)<br/>
+  - [Windows](#windows)<br/>
 - [Known Issues](#known-issues)<br/>
 
 # Using {{ page.project }}
@@ -61,10 +61,11 @@ wind-up.
 -B [ --blend_sigma ] arg        blending sigma for input(s) to remove alias
 artifacts.
 ```
+
 ## Graphical Interface
 
 You can run the GUI from the command line, or by double-clicking it in a folder.
-<code> gui/cleaver-gui</code><br/>
+<br/><code> gui/cleaver-gui</code><br/>
 You should see a window similar to this:<br/>
 <img src="https://sciinstitute.github.io/cleaver.pages/images/application.png"><br/>
 Load the spheres in <code>src/test/test_data/input</code>
@@ -128,11 +129,12 @@ either with <code>ctrl+v</code> or <code>File -> Load Volume</code>,
        *Dihedral Angles* Computes the min/max Dihedral angles. And displays them in the status bar.<br/>
        **View** Toggle view of the Sizing Field, Cleaving, Data, and Mesh View tools. <br/>
        **Help** Show information abour Cleaver2. <br/>
-       <h3>Cleaver Library</h3>
-       To include the cleaver library, you should link to the library built, <code>libcleaver.a</code> or
-       <code>cleaver.lib</code> and include the following headers in your project: <br/>
-       ```bash
-#CMake calls
+
+## Cleaver Library
+To include the cleaver library, you should link to the library built, <code>libcleaver.a</code> or
+<code>cleaver.lib</code> and include the following headers in your project: <br/>
+```bash
+### CMake calls
 include_directories(Cleaver2/src/lib/cleaver)
 target_link_libraries(YOUR_TARGET ${your_libs} Cleaver2/build/lib/libcleaver.a)
 ```
@@ -144,35 +146,34 @@ The basic set of calls are the following:
 #include <Cleaver/Cleaver.h>
 #include <Cleaver/CleaverMesher.h>
 ...
-       //obtain your image fields before this line
-       cleaver::Volume *volume = new cleaver::Volume(fields);
-       cleaver::CleaverMesher mesher(volume);
-       cleaver::AbstractScalarField *sizingField =
-       cleaver::SizingFieldCreator::createSizingFieldFromVolume(
+//obtain your image fields before this line
+cleaver::Volume *volume = new cleaver::Volume(fields);
+cleaver::CleaverMesher mesher(volume);
+cleaver::AbstractScalarField *sizingField =
+  cleaver::SizingFieldCreator::createSizingFieldFromVolume(
        volume,
        (float)(1.0/lipschitz), //defined previously
        (float)scale,           //defined previously
        (float)multiplier,      //defined previously
        (int)padding,           //defined previously
-       (mesh_mode==cleaver::Regular?false:true), //defined previously
        verbose);               //defined previously
-       volume->setSizingField(sizingField);
-       mesher.setRegular(false);
-       bgMesh = mesher.createBackgroundMesh(verbose);
-       mesher.buildAdjacency(verbose);
-       mesher.sampleVolume(verbose);
-       mesher.computeAlphas(verbose);
-       mesher.computeInterfaces(verbose);
-       mesher.generalizeTets(verbose);
-       mesher.snapsAndWarp(verbose);
-       mesher.stencilTets(verbose);
-       cleaver::TetMesh *mesh = mesher.getTetMesh();
-       mesh->writeMesh(output_path + output_name, output_format, verbose);
-       ...
-       ```
-       Look at the <code>Cleaver2/src/cli/mesher/main.cpp</code> file
-       for more details on how to apply
-       and use the different options of the cleaver library.<br/>
+volume->setSizingField(sizingField);
+mesher.setRegular(false);
+bgMesh = mesher.createBackgroundMesh(verbose);
+mesher.buildAdjacency(verbose);
+mesher.sampleVolume(verbose);
+mesher.computeAlphas(verbose);
+mesher.computeInterfaces(verbose);
+mesher.generalizeTets(verbose);
+mesher.snapsAndWarp(verbose);
+mesher.stencilTets(verbose);
+cleaver::TetMesh *mesh = mesher.getTetMesh();
+mesh->writeMesh(output_path + output_name, output_format, verbose);
+...
+```
+Look at the <code>Cleaver2/src/cli/mesher/main.cpp</code> file
+for more details on how to apply
+and use the different options of the cleaver library.<br/>
 
 # Testing
 
