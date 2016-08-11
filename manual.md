@@ -131,44 +131,47 @@ either with <code>ctrl+v</code> or <code>File -> Load Volume</code>,
 ## Cleaver Library
 To include the cleaver library, you should link to the library built, <code>libcleaver.a</code> or
 <code>cleaver.lib</code> and include the following headers in your project: <br/>
+
 ```bash
-### CMake calls
+CMake calls
 include_directories(Cleaver2/src/lib/cleaver)
 target_link_libraries(YOUR_TARGET ${your_libs} Cleaver2/build/lib/libcleaver.a)
 ```
+
 There are other headers for different options,
 such as converting NRRD files to cleaver indicator functions.
 You may wish to write your own indicator function creation methods.
 The basic set of calls are the following:
 <br/>
+
 ```bash
 #include <Cleaver/Cleaver.h>
 #include <Cleaver/CleaverMesher.h>
-...
-//obtain your image fields before this line
-cleaver::Volume *volume = new cleaver::Volume(fields);
-cleaver::CleaverMesher mesher(volume);
-cleaver::AbstractScalarField *sizingField =
-  cleaver::SizingFieldCreator::createSizingFieldFromVolume(
-       volume,
-       (float)(1.0/lipschitz), //defined previously
-       (float)scale,           //defined previously
-       (float)multiplier,      //defined previously
-       (int)padding,           //defined previously
-       verbose);               //defined previously
-volume->setSizingField(sizingField);
-mesher.setRegular(false);
-bgMesh = mesher.createBackgroundMesh(verbose);
-mesher.buildAdjacency(verbose);
-mesher.sampleVolume(verbose);
-mesher.computeAlphas(verbose);
-mesher.computeInterfaces(verbose);
-mesher.generalizeTets(verbose);
-mesher.snapsAndWarp(verbose);
-mesher.stencilTets(verbose);
-cleaver::TetMesh *mesh = mesher.getTetMesh();
-mesh->writeMesh(output_path + output_name, output_format, verbose);
-...
+
+  //obtain your image fields before this line
+  cleaver::Volume *volume = new cleaver::Volume(fields);
+  cleaver::CleaverMesher mesher(volume);
+  cleaver::AbstractScalarField *sizingField =
+    cleaver::SizingFieldCreator::createSizingFieldFromVolume(
+         volume,
+         (float)(1.0/lipschitz), //defined previously
+         (float)scale,           //defined previously
+         (float)multiplier,      //defined previously
+         (int)padding,           //defined previously
+         verbose);               //defined previously
+  volume->setSizingField(sizingField);
+  mesher.setRegular(false);
+  bgMesh = mesher.createBackgroundMesh(verbose);
+  mesher.buildAdjacency(verbose);
+  mesher.sampleVolume(verbose);
+  mesher.computeAlphas(verbose);
+  mesher.computeInterfaces(verbose);
+  mesher.generalizeTets(verbose);
+  mesher.snapsAndWarp(verbose);
+  mesher.stencilTets(verbose);
+  cleaver::TetMesh *mesh = mesher.getTetMesh();
+  mesh->writeMesh(output_path + output_name, 
+    output_format, verbose);
 
 ```
 <br/>
