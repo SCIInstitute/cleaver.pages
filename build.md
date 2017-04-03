@@ -81,8 +81,8 @@ Once CMake, Qt, ITK have been installed and/or built, run CMake from your build 
 <br/>
 Depending on how you obtained Qt, you may need to specify other Qt directories:
 <br/><br/>
-``` -D QT5Widgets_DIR="Path/To/Qt/5.6/gcc/lib/cmake/Qt5Widgets" ``` <br/>
-``` -D QT5OpenGL_DIR="Path/To/Qt/5.6/gcc/lib/cmake/Qt5OpenGL" ``` <br/>
+``` -D Qt5Widgets_DIR="Path/To/Qt/5.6/gcc/lib/cmake/Qt5Widgets" ``` <br/>
+``` -D Qt5OpenGL_DIR="Path/To/Qt/5.6/gcc/lib/cmake/Qt5OpenGL" ``` <br/>
 
 #### Windows
 Open a Visual Studio 64 bit Native Tools Command Prompt.
