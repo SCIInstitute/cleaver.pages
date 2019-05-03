@@ -24,40 +24,38 @@ Using the sphere indicator functions in
 using the following command: <br/>
 ```
 bin/cleaver-cli --output_name spheres -i ../src/test/test_data/input/spheres*.nrrd
-```<br/><br/>
+
 Type:
-<code> bin/cleaver-cli --help</code><br/>
+<code> bin/cleaver-cli --help
 For a list of command line tool options.
 
-```bash
 Command line flags:
--h [ --help ]                   display help message
--v [ --verbose ]                enable verbose output
--V [ --version ]                display version information
--i [ --input_files ] arg        material field paths or segmentation path
--b [ --background_mesh ] arg    input background mesh
--m [ --mesh_mode ] arg          background mesh mode (structured [default],
-    regular)
--a [ --alpha ] arg              initial alpha value
--s [ --alpha_short ] arg        alpha short value for regular mesh_mode
--l [ --alpha_long ] arg         alpha long value for regular mesh_mode
--z [ --sizing_field ] arg       sizing field path
--g [ --grading ] arg            sizing field grading
--x [ --multiplier ] arg         sizing field multiplier
--c [ --scale ] arg              sizing field scale
--p [ --padding ] arg            volume padding
--w [ --write_background_mesh ]  write background mesh
--j [ --fix_tet_windup ]         Ensure positive Jacobians with proper vertex
-wind-up.
--e [ --strip_exterior ]         strip exterior tetrahedra
--o [ --output_path ] arg        output path prefix
--n [ --output_name ] arg        output mesh name [default 'output']
+-a [ --alpha ] arg                  initial alpha value
+-s [ --alpha_short ] arg            alpha short value for constant element sizing method
+-l [ --alpha_long ] arg             alpha long value for constant element sizing method
+-b [ --background_mesh ] arg        input background mesh
+-B [ --blend_sigma ] arg            blending sigma for input(s) to remove alias artifacts
+-m [ --element_sizing_method ] arg  background element sizing method (adaptive [default], constant)
+-F [ --feature_scaling ] arg        feature size scaling (higher values make a coaser mesh)
+-j [ --fix_tet_windup ]             ensure positive Jacobians with proper vertex wind-up
+-h [ --help ]                       display help message
+-i [ --input_files ] arg            material field paths or segmentation path
+-L [ --lipschitz ] arg              maximum rate of change of element size (1 is uniform)
 -f [ --output_format ] arg      output mesh format (tetgen [default], scirun,
-    matlab, vtk, ply [Surface mesh only])
--t [ --strict ]                 warnings become errors
--S [ --segmentation ]           The input file is a segmentation file.
--B [ --blend_sigma ] arg        blending sigma for input(s) to remove alias
-artifacts.
+    matlab, vtk, ply [surface mesh only])
+-n [ --output_name ] arg            output mesh name (default 'output')
+-o [ --output_path ] arg            output path prefix
+-p [ --padding ] arg                volume padding
+-r [ --record ] arg                 record operations on tets from input file
+-R [ --sampling_rate ] arg          volume sampling rate (lower values make a coarser mesh)
+-S [ --segmentation ]               the input file is a segmentation file
+   [--simple]                       use simple interface approximation
+-z [ --sizing_field ] arg           sizing field path
+-t [ --strict ]                     warnings become errors
+-e [ --strip_exterior ]             strip exterior tetrahedra
+-w [ --write_background_mesh ]      write background mesh
+-v [ --verbose ]                    enable verbose output
+-V [ --version ]                    display version information
 ```
 
 ## Graphical Interface
