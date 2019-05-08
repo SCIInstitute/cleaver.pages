@@ -75,7 +75,8 @@ either with <code>ctrl+v</code> or <code>File -> Import Volume</code>,
        This tool allows a user to set parameters for the cleaving sizing field.<br/>
        *Sampling Rate:* the sampling rate of the input indicator functions or calculated indicator functions 
        from segmentation files. The default sample rate will be the dimensions of the volume. Smaller sampling 
-       creates coarser meshes faster.<br/>
+       creates coarser meshes. Adjusting this parameter will also affect Cleaver's runtime, with smaller values
+       running  faster.<br/>
        *Feature Scaling:* scales features of the mesh effecting element size. Higher feature scaling creates 
        coaser meshes. <br/>
        *Lipschitz:* the maximum rate of change of element size throughout a mesh. Helpful for meshes with high 
