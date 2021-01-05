@@ -30,38 +30,39 @@ supportEmail: cleaver@sci.utah.edu
 
 ### Qt
 
-[Qt binaries](qt.io) and packages are available on the Qt website or can be built 
+[Qt binaries](https://www.qt.io/) and packages are available on the Qt website or can be built 
 from source code. Gcc/Clang/MSVC with C++11 support is required.
 
 ### CMake
 
-[CMake](https://cmake.org/) versions 2.8 - 3.4 are supported.
+[CMake](https://cmake.org/) versions 3.4 - 3.18 are supported.
 
 ### ITK
 
-[ITK](http://www.itk.org/) Insight Toolkit (ITK 4.7+ recommended) 
+[ITK](http://www.itk.org/) Insight Toolkit (ITK 4.13+ recommended) 
 
 
 ## Compiling From Source
 
 Once you have obtained a compatible compiler and installed Qt on your system, you need to
-download and install CMake (http://www.cmake.org) to actually build the software.
-CMake is a platform independent configuring system that is used for generating Makefiles,Visual Studio project files, or Xcode project files.
+download and install [CMake](http://www.cmake.org/) to actually build the software.
+CMake is a platform independent configuring system that is used for generating Makefiles, Visual Studio project files, or Xcode project files.
 
 ### Compiling ITK
 
-Configure with:
+Using CMake either on the command line or in the CMake gui, set the source directory as ITK's source code. Create a build folder and set as the build directory. Then configure with the following settings:
 <br/><br/>
-``` CMAKE_CXX_FLAGS+="-std=c++11" ``` <br/>
 ``` BUILD_SHARED_LIBS=FALSE ``` <br/>
 ``` BUILD_EXAMPLES=FALSE ``` <br/>
 ``` BUILD_TESTING=FALSE ``` <br/>
-``` ITKV3_COMPATIBILTY=TRUE ``` <br/>
+``` ITKV4_COMPATIBILTY=FALSE ``` <br/>
 <br/>
-Then build ITK.
+After configuration passes, then generate the makefiles. Build ITK from the build folder using the following command:
 <br/><br/>
+
 ``` make -j12 all ``` <br/>
 <br/>
+
 You may need to use the CMake GUI in Windows. It is best to configure with "NMake Makefiles". Once you have configured and generated, you can build in a command prompt.
 <br/><br/>
 ``` cd C:\ITK_DIR ``` <br/>
@@ -71,18 +72,29 @@ You may need to use the CMake GUI in Windows. It is best to configure with "NMak
 <br/>
 
 ### Compiling {{ page.project }}
-Once CMake, Qt, ITK have been installed and/or built, run CMake from your build directory and give a path to the ShapeworksStudio directory containing the master CMakeLists.txt file.
+Once CMake, Qt, ITK have been installed and/or built, run CMake from your build directory or run the CMake gui. 
 
 #### Unix and OSX
-``` mkdir {{ page.project }}/build ``` <br/>
-``` cd {{ page.project }}/build ``` <br/>
-``` cmake -D ITK_DIR=Path/To/Your/ITK/build -D QT_DIR=Path/To/Your/Qt5/build -D CMAKE_BUILD_TYPE=Release ../src ``` <br/>
-``` make ``` <br/>
-<br/>
-Depending on how you obtained Qt, you may need to specify other Qt directories:
+
+Set the source directory as ``` Cleaver2/src/ ```. Create a build folder (```Cleaver2/build/```) and set as the build directory. Include the paths to your built ITK build directory, and to ```Qt5Widgets``` and ```Qt5OpenGL```. These will be located in your installed Qt library:
 <br/><br/>
-``` -D Qt5Widgets_DIR="Path/To/Qt/5.6/gcc/lib/cmake/Qt5Widgets" ``` <br/>
-``` -D Qt5OpenGL_DIR="Path/To/Qt/5.6/gcc/lib/cmake/Qt5OpenGL" ``` <br/>
+
+```Path/To/Qt/Qt5.12.9/5.12.9/clang_64/lib/cmake/Qt5Widgets``` <br/>
+```Path/To/Qt/Qt5.12.9/5.12.9/clang_64/lib/cmake/Qt5OpenGL``` <br/>
+
+Cleaver2 will not build a bundle by default. If you would like to build the bundle or the Cleaver2 command line interface, then configure with the respective settings:
+<br/><br/>
+
+``` BUILD_GUI=TRUE ``` <br/>
+``` BUILD_CLI=TRUE ``` <br/>
+
+Then configure and generate the makefiles. Build Cleaver2 from the build directory:
+<br/><br/>
+
+``` make -j12 all ``` <br/>
+<br/>
+
+The {{ page.project }} application will be built in build/bin.
 
 #### Windows
 Open a Visual Studio 64 bit Native Tools Command Prompt.
