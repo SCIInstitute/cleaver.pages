@@ -52,6 +52,7 @@ CMake is a platform independent configuring system that is used for generating M
 
 Using CMake either on the command line or in the CMake gui, set the source directory as ITK's source code. Create a build folder and set as the build directory. Then configure with the following settings:
 <br/><br/>
+``` CMAKE_CXX_FLAGS+="-std=c++11" ``` <br/>
 ``` BUILD_SHARED_LIBS=FALSE ``` <br/>
 ``` BUILD_EXAMPLES=FALSE ``` <br/>
 ``` BUILD_TESTING=FALSE ``` <br/>
