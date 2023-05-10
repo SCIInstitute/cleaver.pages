@@ -25,4 +25,4 @@ markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 detach:       false
 port:         9002
 host:         127.0.0.1
-baseurl:      cleaver.pages
+baseurl:      /cleaver.pages
