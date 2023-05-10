@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['cleaver2',['Cleaver2',['../index.html',1,'']]]
+  ['cleaver2',['Cleaver',['../index.html',1,'']]]
 ];
