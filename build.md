@@ -3,7 +3,7 @@ title: Build Instructions
 category: info
 tags: build
 layout: default
-project: Cleaver2
+project: Cleaver
 supportEmail: cleaver@sci.utah.edu
 ---
 
@@ -77,19 +77,19 @@ Once CMake, Qt, ITK have been installed and/or built, run CMake from your build 
 
 #### Unix and OSX
 
-Set the source directory as ``` Cleaver2/src/ ```. Create a build folder (```Cleaver2/build/```) and set as the build directory. Include the paths to your built ITK build directory, and to ```Qt5Widgets``` and ```Qt5OpenGL```. These will be located in your installed Qt library:
+Set the source directory as ``` Cleaver/src/ ```. Create a build folder (```Cleaver/build/```) and set as the build directory. Include the paths to your built ITK build directory, and to ```Qt5Widgets``` and ```Qt5OpenGL```. These will be located in your installed Qt library:
 <br/><br/>
 
 ```Path/To/Qt/Qt5.12.9/5.12.9/clang_64/lib/cmake/Qt5Widgets``` <br/>
 ```Path/To/Qt/Qt5.12.9/5.12.9/clang_64/lib/cmake/Qt5OpenGL``` <br/>
 
-Cleaver2 will not build a bundle by default. If you would like to build the bundle or the Cleaver2 command line interface, then configure with the respective settings:
+Cleaver will not build a bundle by default. If you would like to build the bundle or the Cleaver command line interface, then configure with the respective settings:
 <br/><br/>
 
 ``` BUILD_GUI=TRUE ``` <br/>
 ``` BUILD_CLI=TRUE ``` <br/>
 
-Then configure and generate the makefiles. Build Cleaver2 from the build directory:
+Then configure and generate the makefiles. Build Cleaver from the build directory:
 <br/><br/>
 
 ``` make -j12 all ``` <br/>

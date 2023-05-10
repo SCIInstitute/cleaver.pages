@@ -3,7 +3,7 @@ layout: default
 title: Usage Instructions
 category: info
 tags: manual
-project: Cleaver2
+project: Cleaver
 supportEmail: cleaver@sci.utah.edu
 ---
 
@@ -128,7 +128,7 @@ either with <code>ctrl+v</code> or <code>File -> Import Volume</code>,
        *Remove Locked Tets:* Removes tets that were not warped during cleaving.<br/>
        *Dihedral Angles:* Computes the min/max Dihedral angles. And displays them in the status bar.<br/>
        **View:** Toggle view of the Sizing Field, Cleaving, Data, and Mesh View tools. <br/>
-       **Help:** Show information and documentation about Cleaver2, as well as issue reporting. <br/>
+       **Help:** Show information and documentation about Cleaver, as well as issue reporting. <br/>
 
 ## Cleaver Library
 To include the cleaver library, you should link to the library build, <code>libcleaver.a</code> or
@@ -136,8 +136,8 @@ To include the cleaver library, you should link to the library build, <code>libc
 
 ```bash
 ##CMake calls
-include_directories(Cleaver2/src/lib/cleaver)
-target_link_libraries(YOUR_TARGET ${your_libs} Cleaver2/build/lib/libcleaver.a)
+include_directories(Cleaver/src/lib/cleaver)
+target_link_libraries(YOUR_TARGET ${your_libs} Cleaver/build/lib/libcleaver.a)
 ```
 
 There are other headers for different options,
@@ -178,7 +178,7 @@ The basic set of calls are in the following code snippet:
 
 ```
 
-Look at the <code>Cleaver2/src/cli/mesher/main.cpp</code> file
+Look at the <code>Cleaver/src/cli/mesher/main.cpp</code> file
 for more details on how to apply
 and use the different options of the cleaver library.
 

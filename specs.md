@@ -3,7 +3,7 @@ layout: default
 title: Platform Specifications
 category: info
 tags: build
-project: Cleaver2
+project: Cleaver
 ---
 
 ## Specifications
