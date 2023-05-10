@@ -1,8 +1,14 @@
+# Where things are
 source:       .
 destination:  ./_site
 include:      [doxygen]
+
 name:         Cleaver Pages
+
+# Conversion
 markdown:     kramdown
+
+# Markdown Processors
 kramdown:
   input:          GFM
   auto_ids:       true
@@ -11,7 +17,11 @@ kramdown:
   toc_levels:     1..6
   smart_quotes:   lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
+
+# Handling Reading
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+# Serving
 detach:       false
 port:         9002
 host:         127.0.0.1
