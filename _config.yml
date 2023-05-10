@@ -1,7 +1,7 @@
 source:       .
 destination:  ./_site
 include:      [doxygen]
-name:         Shapeworks Studio Pages
+name:         Cleaver Pages
 markdown:     kramdown
 kramdown:
   input:          GFM
@@ -15,4 +15,4 @@ markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 detach:       false
 port:         9002
 host:         127.0.0.1
-baseurl:      shapeworks.pages
+baseurl:      cleaver.pages
