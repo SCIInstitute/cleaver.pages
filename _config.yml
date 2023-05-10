@@ -7,6 +7,11 @@ name:         Cleaver Pages
 
 # Conversion
 markdown:     kramdown
+plugins:
+  - jekyll-redirect-from
+
+redirect_from:
+  json: false
 
 # Markdown Processors
 kramdown:
