@@ -9,5 +9,5 @@ var searchData=
   ['cleaverwidget',['CleaverWidget',['../class_cleaver_widget.html',1,'']]],
   ['comparedist',['CompareDist',['../classcleaver_1_1_compare_dist.html',1,'cleaver']]],
   ['constantfield',['ConstantField',['../classcleaver_1_1_constant_field.html',1,'cleaver']]],
-  ['cleaver2',['Cleaver2',['../index.html',1,'']]]
+  ['cleaver2',['Cleaver',['../index.html',1,'']]]
 ];
